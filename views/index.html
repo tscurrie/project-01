@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- VENDOR SCRIPTS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -25,56 +25,49 @@
 	  </div>
 	</div>
   
-	<section id="workout-form" class="conatiner">
-		<div class="heading">
-			<h2>Create a Workout</h2>
-			<h3>Name your workout</h3>
-			<form id="workout-name">
-			  <input type="text" name="firstname" placeholder="ex. Arms and Back">
-			</form>
-		</div>
-		<div class="description">
-			<h4>Description</h4>
-			<form id="description">
-			  <input type="text" name="lastname">
-			</form>
-		</div>
+	<section id='workout-form' class="container">
+		<div class="row">
+		<div class="col-md-10 col-md-offset-1">	
+			<form class="form-horizontal">
+				<fieldset>	
 		
-		<!-- you need to find out how to continually add an input box -->
-		<div class="exercise">
-			<h5>Exercise</h5>
-			<form id ="ex1">
-			  <input type="text" name="exercise1" placeholder="pull ups">
+					<h2>Create a Workout</h2>
+					<h3>Name your workout</h3>
+					
+					  <input id="workout-name" type="text" name="firstname" placeholder="ex. Arms and Back">
+					
+					
+					<h4>Description</h4>
+					
+					  <input id="description"type="text" name="lastname">
+				
+				<!-- you need to find out how to continually add an input box -->
+					<h5>Exercise</h5>
+					  <input id ="ex1" type="text" name="exercise1" placeholder="pull ups">
+					
+						<div class="hidden-test">
+							<h5>Hidden</h5>
+						  	<input id="hidden" type="text" name="hidden">
+						</div><br>
+					<button type="button" id="addMore">Add more exercises to this workout</button><br>
+					
+				<div class="create">
+					<button type="button" class="btn-btn-primary" id="createWorkout">Create Workout</button>
+				</div>
+				</fieldset>
 			</form>
-			<h5>Exercise</h5>
-			<form id="ex2">
-			  <input type="text" name="exercise2">
-			</form>
-			<h5>Exercise</h5>
-			<form id="ex3">
-			  <input type="text" name="exercise3">
-			</form><br>
-			
-			<div class="hidden-test">
-				<h5>Hidden</h5>
-				<form id="hidden">
-			  	<input type="text" name="hidden">
-				</form><br>
-			</div>
-			
-			<button type="button" id="addMore">Add more exercises to this workout</button>
-
-			<button type="button" class="btn-btn-primary" id="createWorkout">Create Workout</button>
 		</div>
-	</section>
-		
+		</div>
+	</section>	
 
 	<section class="workouts">
 		<div class="container">
 			<h2>Workouts</h2>
 			<div id="workouts-placement"></div>
+				
+			</div>
 		</div>
-	</div>
+	
 	</section>
 </body>
 </html>

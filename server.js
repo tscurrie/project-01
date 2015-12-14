@@ -9,7 +9,9 @@ var bodyParser = require('body-parser');
 
 var db = require('./models');
 // serve static files from public folder
-var workoutList = [];
+var workoutList = [{workoutName: 'arms and back'}];
+	// {description: 'Upper body workout to be performed twice a week'},
+	// {exercise: 'pull ups', 'push ups','rows','dips','lat pulls'}];
 
 
 
@@ -21,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	});
 
 	app.get('/api/workouts', function (req, res) {
-		res.send('lets try again');
+		res.json(workoutList);
 	});
 
 	app.get('/api/history', function (req, res){

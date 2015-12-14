@@ -2,13 +2,13 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ExerciseSchema = new Schema({
-	name: String,
+	// name: String, name from workoutSchema
 	date: Date,
 	sets: Number,
 	reps: Number,
 	notes: String
 });
 
-var Exercise = mongoose.model('exercise', ExerciseSchema);
+var Exercise = mongoose.model('Exercise', ExerciseSchema);
 
-module.exports = exercise;
+module.exports = Exercise;
