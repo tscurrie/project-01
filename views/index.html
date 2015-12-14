@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- Style.sheets -->
+
+	<title>Let's Get Stronger</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <script src="js/app.js"></script>
+	
+</head>
+<body>
+	<div class="jumbotron">
+	  <div class="container">
+		<h1>Let's Get Stronger</h1>
+	  	<p>Create and track your workout progress!</p>
+	  </div>
+	</div>
+  
+	<section id="workout-form" class="conatiner">
+		<div class="heading">
+			<h2>Create a Workout</h2>
+			<h3>Name your workout</h3>
+			<form id="workout-name">
+			  <input type="text" name="firstname" placeholder="ex. Arms and Back">
+			</form>
+		</div>
+		<div class="description">
+			<h4>Description</h4>
+			<form id="description">
+			  <input type="text" name="lastname">
+			</form>
+		</div>
+		
+		<!-- you need to find out how to continually add an input box -->
+		<div class="exercise">
+			<h5>Exercise</h5>
+			<form id ="ex1">
+			  <input type="text" name="exercise1" placeholder="pull ups">
+			</form>
+			<h5>Exercise</h5>
+			<form id="ex2">
+			  <input type="text" name="exercise2">
+			</form>
+			<h5>Exercise</h5>
+			<form id="ex3">
+			  <input type="text" name="exercise3">
+			</form><br>
+			
+			<div class="hidden-test">
+				<h5>Hidden</h5>
+				<form id="hidden">
+			  	<input type="text" name="hidden">
+				</form><br>
+			</div>
+			
+			<button type="button" id="addMore">Add more exercises to this workout</button>
+
+			<button type="button" class="btn-btn-primary" id="createWorkout">Create Workout</button>
+		</div>
+	</section>
+		
+
+	<section class="workouts">
+		<div class="container">
+			<h2>Workouts</h2>
+			<div id="workouts-placement"></div>
+		</div>
+	</div>
+	</section>
+</body>
+</html>
