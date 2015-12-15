@@ -5,9 +5,12 @@ $(document).ready(function() {
 		method: 'GET',
 		url: ('/api/workouts'),
 		success: (function (data){
-			console.log('workouts is working');
-			console.log(data);
-			$('#workouts-placement').prepend(data);
+				console.log(data);
+				data.forEach(function (element){
+					console.log(element);
+			$('#workouts-placement').prepend(element);
+				});
+		 // });
 		})
 	});
 	
@@ -18,28 +21,6 @@ $(document).ready(function() {
 			console.log('history is working');
 		})
 	});
-
-
-	// need to look into making this a function
-	// $('#workout-name').on('submit', function (e){
-	// 	e.preventDefault();
-	// 	var name = $('#workout-name input').val();
-	// 	console.log('name: ' + name);
-	// $('#description').on('click', function (e){
-	// 	e.preventDefault();
-	// 	var description = $('#description input').val();
-	// 	console.log('description: ' + description);
-	// $('#ex1').on('submit', function (e){
-	// 	e.preventDefault();
-	// 	var ex1 = $('#ex1 input').val();
-	// 	console.log('exercise: ' + ex1);
-	// $('#ex2').on('submit', function (e){
-	// 	e.preventDefault();
-	// 	var ex2 = $('#ex2 input').val();
-	// 	console.log('exercise: ' + ex2);
-	// $('#ex3').on('submit', function (e){
-	// 	e.preventDefault();
-	// 	console.log('exercise: ' + ex3);
 	
 
 	$('.create').on('click', function (e){
@@ -63,9 +44,21 @@ $(document).ready(function() {
 		var ex14 = $('#ex14').val();
 		var ex15 = $('#ex15').val();
 		console.log('form data', formData);
-		// $.ajax({
-		// 	method: 'POST',
-		// 	url: ('/api/workouts'),
+		$.ajax({
+			method: 'POST',
+			url: '/api/workouts',
+			data: formData,
+			success: function(response){
+			// response.forEach(function (element){
+					console.log(response);
+					$('#workouts-placement').prepend(response);
+				
+
+				//console.log('workout after POST', things);
+			
+			}
+		});
+
 		// 	success: (function (stuff){
 		// 		console.log('post went through');
 		// 		$('#workouts-placement').prepend(stuff);
@@ -82,7 +75,6 @@ $(document).ready(function() {
 		console.log('add-more is working');
 		$('.hidden-test').toggle();
 	});
-
 
 
 });

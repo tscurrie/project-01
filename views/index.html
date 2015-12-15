@@ -42,40 +42,41 @@
 					  <input id="description"type="text" name="description">
 				
 				<!-- you need to find out how to continually add an input box -->
+				<div class="exercises">
 					<h5>Exercise 1:</h5>
-					  <input id ="ex1" type="text" name="exercise1" placeholder="pull ups">
+					  <input id="ex1" type="text" name="exercises[]" placeholder="pull ups">
 						<h5>Exercise 2:</h5>
-						<input id ="ex2" type="text" name="exercise2">
+						<input id="ex2" type="text" name="exercises[]">
 						<h5>Exercise 3:</h5>
-						<input id ="ex3" type="text" name="exercise3">
+						<input id="ex3" type="text" name="exercises[]">
 						<h5>Exercise 4:</h5>
-						<input id ="ex4" type="text" name="exercise4">
+						<input id="ex4" type="text" name="exercises[]">
 						<h5>Exercise 5:</h5>
-						<input id ="ex5" type="text" name="exercise5">
+						<input id="ex5" type="text" name="exercises[]">
 						<h5>Exercise 6:</h5>
-						<input id ="ex6" type="text" name="exercise6">
+						<input id="ex6" type="text" name="exercises[]">
 
 						<div class="hidden-test">
 							<h5>Exercise 7:</h5>
-						  	<input id="ex7" type="text" name="exercise7">
+						  	<input id="ex7" type="text" name="exercises[]">
 						  	<h5>Exercise 8:</h5>
-						  	<input id="ex8" type="text" name="exercise8">
+						  	<input id="ex8" type="text" name="exercises[]">
 						  	<h5>Exercise 9:</h5>
-						  	<input id="ex9" type="text" name="exercise9">
+						  	<input id="ex9" type="text" name="exercises[]">
 						  	<h5>Exercise 10:</h5>
-						  	<input id="ex10" type="text" name="exercise10">
+						  	<input id="ex10" type="text" name="exercises[]">
 						  	<h5>Exercise 11:</h5>
-						  	<input id="ex11" type="text" name="exercise11">
+						  	<input id="ex11" type="text" name="exercises[]">
 						  	<h5>Exercise 12:</h5>
-						  	<input id="ex12" type="text" name="exercise12">
+						  	<input id="ex12" type="text" name="exercises[]">
 						  	<h5>Exercise 13:</h5>
-						  	<input id="ex13" type="text" name="exercise13">
+						  	<input id="ex13" type="text" name="exercises[]">
 						  	<h5>Exercise 14:</h5>
-						  	<input id="ex14" type="text" name="exercise14">
+						  	<input id="ex14" type="text" name="exercises[]">
 						  	<h5>Exercise 15:</h5>
-						  	<input id="ex15" type="text" name="exercise15">
+						  	<input id="ex15" type="text" name="exercises[]">
 						</div><br>
-
+					</div>
 					<br><button type="button" id="addMore">Add more exercises to this workout</button><br>
 					
 				<div class="create">
@@ -89,12 +90,23 @@
 
 	<section class="workouts">
 		<div class="container">
+			<div class="row">
 			<h2>Workouts</h2>
-			<div id="workouts-placement"></div>
-				
+				<!-- <div class="col-md-6 col-md-offset-3">
+					<div id="workout-placements">
+						
+            				{{#each workout}}
+              				<p><strong>{{name}}</strong> by {{exercises.[0].name}}</p>
+            				{{/each}}
+          				
+					</div>
+				</div> -->
 			</div>
 		</div>
 	
+	
 	</section>
+
+
 </body>
 </html>

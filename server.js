@@ -9,11 +9,10 @@ var bodyParser = require('body-parser');
 
 var db = require('./models');
 // serve static files from public folder
-var workoutList = [{workoutName: 'arms and back'}];
 	// {description: 'Upper body workout to be performed twice a week'},
 	// {exercise: 'pull ups', 'push ups','rows','dips','lat pulls'}];
 
-
+var exercises= [];
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,14 +22,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	});
 
 	app.get('/api/workouts', function (req, res) {
-		res.json(workoutList);
+		db.Workout.find({}, function(err, workout){
+			res.json(workout);
+		// res.json(workoutList);
+		});
 	});
 
 	app.get('/api/history', function (req, res){
 		res.send('history page is working');
 	});
+
 	app.post('/api/workouts', function (req, res){
-		res.send('server check');
+		console.log('req', req.body);
+		db.Workout.create(req.body, function (err, workouta){
+			exercises.push(workouta);
+			console.log('workouta',workouta);
+		res.send(workouta);
+			
+		});
 	});
 
 

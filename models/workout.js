@@ -6,7 +6,7 @@ var Exercise = require('./exercise.js');
 var WorkoutSchema = new Schema({
 	workoutName: String,
 	description: String,
-	exercises: [Exercise.schema]
+	exercises: [String]
 });
 
 var Workout = mongoose.model('Workout', WorkoutSchema);

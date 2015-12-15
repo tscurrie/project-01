@@ -1,12 +1,15 @@
 var db = require("./models");
 
-var workout = [
-	{
+var workout = [{
 		workoutName: 'arms and back',
 		description: 'Upper body workout to be performed twice a week',
-		exercise: ['pull ups', 'push ups','bent over rows','dips','lat pulls']
-	}
-];
+		exercises: ['pull ups', 'push ups','bent over rows','dips','lat pulls']
+	},{
+		workoutName: 'legs',
+		description: 'leg workout to be done twice a week',
+		exercises: ['squats', 'lunges', 'box jumps', 'leg press']
+	} ];
+
 
 
 // create all workout objects above
