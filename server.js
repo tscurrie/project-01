@@ -28,6 +28,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 		});
 	});
 
+	app.get('/api/exercises', function (req, res) {
+		res.send('exrcises server side is working');
+	});
+
 	app.get('/api/history', function (req, res){
 		res.send('history page is working');
 	});

@@ -15,7 +15,14 @@ $(document).ready(function() {
 
 	});
 
-	
+	$.ajax({
+		method: 'GET',
+		url: ('/api/exercises'),
+		success: (function (history){
+			console.log('exercises is working');
+		})
+	});
+
 	$.ajax({
 		method: 'GET',
 		url: ('/api/history'),
@@ -51,32 +58,22 @@ $(document).ready(function() {
 			url: '/api/workouts',
 			data: formData,
 			success: function(response){
-			// response.forEach(function (element){
 					console.log(response);
+		$('#workout-form form').trigger("reset");
+					$('#workout-list').empty();
 				$.ajax({
 				method: 'GET',
 				url: ('/api/workouts'),
 				success: (function (data){
+						$('#workout-list').trigger("reset");
 						var dataHtml = template({workouts: data});
 						$('#workout-list').append(dataHtml);
-				})
 
+				})
 			});
 				
-
-				//console.log('workout after POST', things);
-			
 			}
 		});
-
-		// 	success: (function (stuff){
-		// 		console.log('post went through');
-		// 		$('#workouts-placement').prepend(stuff);
-		// 	})
-		// });
-	
-	
-	
 	});
 
 	// adds more input fields, look into other solutions

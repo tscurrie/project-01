@@ -13,14 +13,14 @@ var workout = [{
 
 
 // create all workout objects above
-db.Workout.create(workout, function(err, success) {
-	if(err) {return console.log(err);}
-	console.log("SUCCESS" , success);
-});
+// db.Workout.create(workout, function(err, success) {
+// 	if(err) {return console.log(err);}
+// 	console.log("SUCCESS" , success);
+// });
 
 
 // remove all of the objects
-// db.Workout.remove({}, function(err, success) {
-// 	if(err) {return console.log(err);}
-// 	console.log("SUCCESSFULLY DUMPED DB");
-// });
+db.Workout.remove({}, function(err, success) {
+	if(err) {return console.log(err);}
+	console.log("SUCCESSFULLY DUMPED DB");
+});
