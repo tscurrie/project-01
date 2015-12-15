@@ -34,7 +34,7 @@
 					<h2>Create a Workout</h2>
 					<h3>Name your workout</h3>
 					
-					  <input id="workout-name" type="text" name="name" placeholder="ex. Arms and Back">
+					  <input id="workout-name" type="text" name="workoutName" placeholder="ex. Arms and Back">
 					
 					
 					<h4>Description</h4>
@@ -92,15 +92,21 @@
 		<div class="container">
 			<div class="row">
 			<h2>Workouts</h2>
-				<!-- <div class="col-md-6 col-md-offset-3">
-					<div id="workout-placements">
+				<div class="col-md-6 col-md-offset-3">
+						<ul class="list-group" id="workout-list">
 						
-            				{{#each workout}}
-              				<p><strong>{{name}}</strong> by {{exercises.[0].name}}</p>
-            				{{/each}}
-          				
+            				<script id="workout-template" type="text/x-handlebars-template">
+					            {{#each workouts}}
+					              <li class="list-group-item workout" data-id={{_id}}>
+					              <p><b>Workout: </b>{{workoutName}}</p>
+					              <p><b>Description: </b>{{description}}</p>
+					              <p><b>Exercises: </b>{{exercises}}</p>
+					              </li>
+					            {{/each}}
+					          </script>
+          				</ul>
 					</div>
-				</div> -->
+				</div>
 			</div>
 		</div>
 	

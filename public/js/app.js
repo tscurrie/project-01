@@ -1,18 +1,20 @@
 $(document).ready(function() {
 	console.log('app.js loaded!');
 
+	// handlebars set up
+	var source = $('#workout-template').html();
+	var template = Handlebars.compile(source);
+
 	$.ajax({
 		method: 'GET',
 		url: ('/api/workouts'),
 		success: (function (data){
-				console.log(data);
-				data.forEach(function (element){
-					console.log(element);
-			$('#workouts-placement').prepend(element);
-				});
-		 // });
+				var dataHtml = template({workouts: data});
+				$('#workout-list').append(dataHtml);
 		})
+
 	});
+
 	
 	$.ajax({
 		method: 'GET',
@@ -51,7 +53,15 @@ $(document).ready(function() {
 			success: function(response){
 			// response.forEach(function (element){
 					console.log(response);
-					$('#workouts-placement').prepend(response);
+				$.ajax({
+				method: 'GET',
+				url: ('/api/workouts'),
+				success: (function (data){
+						var dataHtml = template({workouts: data});
+						$('#workout-list').append(dataHtml);
+				})
+
+			});
 				
 
 				//console.log('workout after POST', things);

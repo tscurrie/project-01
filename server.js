@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	});
 
 	app.get('/api/workouts', function (req, res) {
-		db.Workout.find({}, function(err, workout){
-			res.json(workout);
+		db.Workout.find({}, function(err, workouts){
+			res.json(workouts);
 		// res.json(workoutList);
 		});
 	});
