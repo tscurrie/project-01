@@ -42,9 +42,9 @@ $(document).ready(function() {
 	// 	console.log('exercise: ' + ex3);
 	
 
-	$('#workout-form').on('submit', function (e){
+	$('.create').on('click', function (e){
 		e.preventDefault();
-		var formData = $(this).serialize();
+		var formData = $('#workout-form form').serialize();
 		var name = $('#workout-name').val();
 		var description = $('#description').val();
 		var ex1 = $('#ex1').val();
@@ -62,16 +62,15 @@ $(document).ready(function() {
 		var ex13 = $('#ex13').val();
 		var ex14 = $('#ex14').val();
 		var ex15 = $('#ex15').val();
-		
 		console.log('form data', formData);
-		$.ajax({
-			method: 'POST',
-			url: ('/api/workouts'),
-			success: (function (stuff){
-				console.log('post went through');
-				$('#workouts-placement').prepend(stuff);
-			})
-		});
+		// $.ajax({
+		// 	method: 'POST',
+		// 	url: ('/api/workouts'),
+		// 	success: (function (stuff){
+		// 		console.log('post went through');
+		// 		$('#workouts-placement').prepend(stuff);
+		// 	})
+		// });
 	
 	
 	
