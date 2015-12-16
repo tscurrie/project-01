@@ -19,9 +19,21 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-	app.get('/', function homepage (req, res) {
-	  res.sendFile(__dirname + '/views/index.html');
+	//// HTML ENDPOINTS
+
+	app.get("/", function homepage(req, res){
+		res.send("Homepage")
+	})
+
+	app.get('/workouts', function workout_index (req, res) {
+	  res.sendFile(__dirname + '/views/workout/index.html');
 	});
+
+	app.get('/workouts/:id', function workout_show (req, res) {
+	  res.sendFile(__dirname + '/views/workout/show.html');
+	});
+
+	//// JSON ENDPOINTS
 
 	app.get('/api/workouts', function (req, res) {
 		db.Workout.find({}, function(err, workouts){
@@ -29,13 +41,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 		});
 	});
 
-	app.get('/api/exercises', function (req, res) {
-		res.send('exrcises server side is working');
-	});
+	// app.get('/api/exercises', function (req, res) {
+	// 	res.send('exrcises server side is working');
+	// });
 
-	app.get('/api/history', function (req, res){
-		res.send('history page is working');
-	});
+	// app.get('/api/history', function (req, res){
+	// 	res.send('history page is working');
+	// });
 
 	app.post('/api/workouts', function (req, res){
 		console.log('req', req.body);

@@ -17,9 +17,29 @@ $(document).ready(function() {
 	});
 		$('#workout-list').on('click', '.workout', function (e){
 		var id = $(this).data("id");
+		location.href=('/workouts/' + id);
 		console.log(id);
-		// location.href=('/api/workouts/' + id);
+	    
+		// if you want ot have the modal pop up on the workout click
+	    // $('#myModal').data('data-id', id);
+	    // $('#myModal').modal();
+
 		});
+
+  });
+		
+		// selecotrs for buttons in modals, non-functional att
+		// $('#myModal').on('click','#continue', function (e){
+		// 	alert('wtf');
+		// });
+
+		// $('#update').on('click', function (e){
+		// 	alert('update');
+		// });
+		// $('#delete').on('click', function (e){
+		// 	alert('delete');
+		// });
+		
 
 		// $('')
 
@@ -109,18 +129,18 @@ $(document).ready(function() {
 
 
 
-	$('#confirm-delete').on('click', function (e){
-		var workoutDelete = $('#exerciseDelete').val();	
-		console.log(workoutDelete);
+	// $('#confirm-delete').on('click', function (e){
+	// 	var workoutDelete = $('#exerciseDelete').val();	
+	// 	console.log(workoutDelete);
 		
-	});
+	// });
 
 	// adds more input fields, look into other solutions
 	$('#addMore').on('click', function (e){
 		e.preventDefault();
 		console.log('add-more is working');
 		$('.hidden-test').toggle();
-	});
+	// });
 
 
 });
