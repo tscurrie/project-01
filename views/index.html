@@ -93,14 +93,14 @@
 			<div class="row">
 			<h2>Workouts</h2></br>
 				<div class="col-md-6 col-md-offset-3">
-								<br><button type="button" class="btn-btn-primary" id="deleteWorkout">Delete Workout</button>
+								<br>
 						<ul class="list-group" id="workout-list">
 						
             				<script id="workout-template" type="text/x-handlebars-template">
 					            {{#each workouts}}
-					              <li class="list-group-item workout" data-id="{{_id}}">
+					              <li >
 					              workout_id: {{_id}} TEMPORARY
-					              <p><strong>Workout: </strong>{{workoutName}}</p>
+					              <p class="list-group-item workout" data-id="{{_id}}"><strong>Workout: </strong>{{workoutName}}</p>
 					              <p><strong>Description: </strong>{{description}}</p>
 					              <p><strong>Exercises: </strong>
 					              		<ul>
@@ -109,8 +109,10 @@
 						              		{{/each}}
 					              		</ul>
 					              </p>
+					              <button type="button" class="btn-btn-primary workkkk" id="deleteWorkout">Delete Workout</button>
 					              </li></br>
 					            {{/each}}
+
 					          </script>
           				</ul>
 							
@@ -121,7 +123,30 @@
 	
 	
 	</section>
+<!-- Button HTML (to Trigger Modal) -->
+<a href="#myModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Delete Workout</a>
+ 
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                <p>Please insert the ID of the workout you would delete:</p>
+                <p class="text-warning">
+       			  	<input id="exerciseDelete" type="text" name="name">
 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" id="confirm-delete" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

@@ -18,8 +18,11 @@ $(document).ready(function() {
 		$('#workout-list').on('click', '.workout', function (e){
 		var id = $(this).data("id");
 		console.log(id);
-		location.href=('/api/workouts/' + id);
-	});
+		// location.href=('/api/workouts/' + id);
+		});
+
+		// $('')
+
 	// tunely suggestions maybe delete
 
 	// 	}
@@ -100,19 +103,17 @@ $(document).ready(function() {
 			}
 		});
 	});
-
 	// $('#deleteWorkout').on('click', function (e){
-	// 	// e.preventDefault();
-	// 	alert('yay');
-	// 	$.ajax({
-	// 		method: 'DELETE',
-	// 		url: '/api/workouts',
-	// 		success: (function (data){
-	// 			console.log('nope');
-	// 		})
-	// 	});
+	// 	alert('why?');
 	// });
 
+
+
+	$('#confirm-delete').on('click', function (e){
+		var workoutDelete = $('#exerciseDelete').val();	
+		console.log(workoutDelete);
+		
+	});
 
 	// adds more input fields, look into other solutions
 	$('#addMore').on('click', function (e){

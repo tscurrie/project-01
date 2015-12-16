@@ -14,6 +14,8 @@ var db = require('./models');
 
 // var exercises= [];
 
+app.set('view engine', 'hbs');
+
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -45,12 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 		});
 	});
 
-// app.get('/api/albums/:id', function albumShow(req, res) {
-//   console.log('requested album id=', req.params.id);
-//   db.Album.findOne({_id: req.params.id}, function(err, album) {
-//     res.json(album);
-//   });
-// });
+
 
 	app.get('/api/workouts/:id', function (req, res) {
 		console.log('requested workout id=', req.params.id);
@@ -59,13 +56,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 		});
 	});
 
-
+	 
+	// for exercises "api/workouts/" + w.id + "/exercises" + id
+	
 	// app.delete('/api/workouts', function (req, res){
 	// 	console.log('deleting id: req.params.id');
+	// 	db.Workout.remove({_id: req.params.id}, function (err, success){
+	// 		res.json(success);
 	// 	res.send('hell yeah');
 	// });
+	// });
 
-
+app.get('/testpage', function(req,res){
+  res.render('test', { title: 'Awesome Post', text: 'Lorem ipsum dolor'});
+});
 
 
 
