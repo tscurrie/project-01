@@ -93,18 +93,27 @@
 			<div class="row">
 			<h2>Workouts</h2></br>
 				<div class="col-md-6 col-md-offset-3">
+								<br><button type="button" class="btn-btn-primary" id="deleteWorkout">Delete Workout</button>
 						<ul class="list-group" id="workout-list">
 						
             				<script id="workout-template" type="text/x-handlebars-template">
 					            {{#each workouts}}
 					              <li class="list-group-item workout" data-id={{_id}}>
-					              <p><b>Workout: </b>{{workoutName}}</p>
-					              <p><b>Description: </b>{{description}}</p>
-					              <p><b>Exercises: </b>{{exercises}}</p>
+					              workout_id: {{_id}} TEMPORARY
+					              <p><strong>Workout: </strong>{{workoutName}}</p>
+					              <p><strong>Description: </strong>{{description}}</p>
+					              <p><strong>Exercises: </strong>
+					              		<ul>
+						              		{{#each exercises}}
+						              			<li>{{note}}, exercise_id: {{_id}} TEMPORARY</li>
+						              		{{/each}}
+					              		</ul>
+					              </p>
 					              </li></br>
 					            {{/each}}
 					          </script>
           				</ul>
+							
 					</div>
 				</div>
 			</div>

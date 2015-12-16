@@ -15,21 +15,21 @@ $(document).ready(function() {
 
 	});
 
-	$.ajax({
-		method: 'GET',
-		url: ('/api/exercises'),
-		success: (function (history){
-			console.log('exercises is working');
-		})
-	});
+	// $.ajax({
+	// 	method: 'GET',
+	// 	url: ('/api/exercises'),
+	// 	success: (function (history){
+	// 		console.log('exercises is working');
+	// 	})
+	// });
 
-	$.ajax({
-		method: 'GET',
-		url: ('/api/history'),
-		success: (function (history){
-			console.log('history is working');
-		})
-	});
+	// $.ajax({
+	// 	method: 'GET',
+	// 	url: ('/api/history'),
+	// 	success: (function (history){
+	// 		console.log('history is working');
+	// 	})
+	// });
 	
 
 	$('.create').on('click', function (e){
@@ -75,6 +75,19 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	$('#deleteWorkout').on('click', function (e){
+		// e.preventDefault();
+		alert('yay');
+		$.ajax({
+			method: 'DELETE',
+			url: '/api/workouts',
+			success: (function (data){
+				console.log('nope');
+			})
+		});
+	});
+
 
 	// adds more input fields, look into other solutions
 	$('#addMore').on('click', function (e){

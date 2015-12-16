@@ -12,7 +12,7 @@ var db = require('./models');
 	// {description: 'Upper body workout to be performed twice a week'},
 	// {exercise: 'pull ups', 'push ups','rows','dips','lat pulls'}];
 
-var exercises= [];
+// var exercises= [];
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,11 +39,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	app.post('/api/workouts', function (req, res){
 		console.log('req', req.body);
 		db.Workout.create(req.body, function (err, workouta){
-			exercises.push(workouta);
+			// exercises.push(workouta);
 			console.log('workouta',workouta);
-		res.send(workouta);
+			res.send(workouta);
 			
 		});
+	});
+
+	app.delete('/api/workouts', function (req, res){
+		console.log('deleting id: req.params.id');
+		res.send('hell yeah');
 	});
 
 
