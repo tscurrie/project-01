@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+   <title>Workout Info</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <script src="/js/show.js"></script>
+	
+
+</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>{{workoutName}}</h1>
+				<p>{{description}}</p>
+			</div>
+		</div>
+		
+		<section id='exercise-form' class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">	
+					<form class="form-vertical">
+						<fieldset>	
+						<h2>Record your workout</h2>
+						<div class ="exercise-list">
+							<h4>{{exercise}}</h4>
+							<p>Sets: </p>
+							<input id="sets" type="text" name="sets[]">
+							<p>Repitions:</p>
+							<input id="reps" type="text" name="reps[]">
+							<p>Weight or Time:</p>
+							<input id="weight/time" type="text" name="weight/time[]">
+							<p>Note:</p>
+							<input id="note" type="text" name="notes[]">
+							
+						</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</section>	
+		<div class="buttons">
+			<div class="history">
+					<br><button type="button" class="btn-btn-primary" id="history">Workout History</button>
+				<div class="update">
+					<br><button type="button" class="btn-btn-primary" id="updateWorkout">Update Workout</button>
+				</div>
+				<div class="delete">
+					<br><button type="button" class="btn-btn-primary" id="deleteWorkout">Delete Workout</button>
+				</div>
+				<div class="save">
+					<br><button type="button" class="btn-btn-primary" id="saveWorkout">Save Workout</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

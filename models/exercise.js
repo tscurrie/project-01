@@ -6,6 +6,7 @@ var ExerciseSchema = new Schema({
 	// date: Date,
 	// sets: Number,
 	// reps: Number,
+	// weight/time: Number,
 	note: String
 });
 
