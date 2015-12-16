@@ -24,7 +24,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	app.get('/api/workouts', function (req, res) {
 		db.Workout.find({}, function(err, workouts){
 			res.json(workouts);
-		// res.json(workoutList);
 		});
 	});
 
@@ -46,15 +45,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 		});
 	});
 
-	app.delete('/api/workouts', function (req, res){
-		console.log('deleting id: req.params.id');
-		res.send('hell yeah');
+// app.get('/api/albums/:id', function albumShow(req, res) {
+//   console.log('requested album id=', req.params.id);
+//   db.Album.findOne({_id: req.params.id}, function(err, album) {
+//     res.json(album);
+//   });
+// });
+
+	app.get('/api/workouts/:id', function (req, res) {
+		console.log('requested workout id=', req.params.id);
+		db.Workout.findOne({_id: req.params.id}, function (err, success){
+			res.json(success);
+		});
 	});
 
 
-
-
-//Doug Tsui is the fucking coolest person in the world
+	// app.delete('/api/workouts', function (req, res){
+	// 	console.log('deleting id: req.params.id');
+	// 	res.send('hell yeah');
+	// });
 
 
 

@@ -13,7 +13,7 @@ var exercises1 = [
 		reps: 10,
 		note: "example 1"
 	}
-]
+];
 
 var exercises2 = [
 	{
@@ -28,7 +28,7 @@ var exercises2 = [
 		reps: 10,
 		note: "example 3"
 	}
-]
+];
 
 var workout = [{
 		workoutName: 'arms and back',
@@ -43,14 +43,14 @@ var workout = [{
 
 
 // remove all of the objects
-db.Workout.remove({}, function(err, success) {
-	if(err) {return console.log(err);}
-	console.log("SUCCESSFULLY DUMPED DB");
+// db.Workout.remove({}, function(err, success) {
+// 	if(err) {return console.log(err);}
+// 	console.log("SUCCESSFULLY DUMPED DB");
 	
 	// create all workout objects above
 	db.Workout.create(workout, function(err, success) {
 		if(err) {return console.log(err);}
 		console.log("SUCCESS" , success);
-	});
+	// });
 
 });

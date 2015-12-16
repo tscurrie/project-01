@@ -9,11 +9,36 @@ $(document).ready(function() {
 		method: 'GET',
 		url: ('/api/workouts'),
 		success: (function (data){
+				console.log(data);
 				var dataHtml = template({workouts: data});
 				$('#workout-list').append(dataHtml);
 		})
 
 	});
+		$('#workout-list').on('click', '.workout', function (e){
+		var id = $(this).data("id");
+		console.log(id);
+		location.href=('/api/workouts/' + id);
+	});
+	// tunely suggestions maybe delete
+
+	// 	}
+	// });
+	// $.ajax({
+	// 	method: 'GET',
+	// 	url: '/api/workouts/:workout_id/exercises/:id',
+	// 	success: function (data) {
+	// 		console.log(data);
+	// 	}
+	// });
+	// $.ajax({
+	// 	method: 'GET',
+	// 	url: '/api/workouts/:workout_id/exercise',
+	// 	success: function (data) {
+	// 		console.log(data);
+	// 	}
+	// });
+
 
 	// $.ajax({
 	// 	method: 'GET',
@@ -76,17 +101,17 @@ $(document).ready(function() {
 		});
 	});
 
-	$('#deleteWorkout').on('click', function (e){
-		// e.preventDefault();
-		alert('yay');
-		$.ajax({
-			method: 'DELETE',
-			url: '/api/workouts',
-			success: (function (data){
-				console.log('nope');
-			})
-		});
-	});
+	// $('#deleteWorkout').on('click', function (e){
+	// 	// e.preventDefault();
+	// 	alert('yay');
+	// 	$.ajax({
+	// 		method: 'DELETE',
+	// 		url: '/api/workouts',
+	// 		success: (function (data){
+	// 			console.log('nope');
+	// 		})
+	// 	});
+	// });
 
 
 	// adds more input fields, look into other solutions
