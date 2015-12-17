@@ -48,7 +48,12 @@ app.get('/api/workouts', function (req, res) {
 	});
 });
 
+app.get('/workouts/:id/history', function (req, res) {
+	db.Workout.find({_id: req.body.id}, function(err, workouts){
+	res.json(workouts);
 
+	});
+});
 
 app.post('/api/workouts', function (req, res){
 	console.log('req', req.body);

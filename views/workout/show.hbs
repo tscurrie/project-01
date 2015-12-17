@@ -35,8 +35,9 @@
 						<h2>Record your workout</h2>
 						<div class ="exercise-list">
 							
-							<!-- <a href="/workouts/\{{_id}}">\{{workoutName}}</a> -->
-							<h3><a href="/exercises/\{{_id}}">{{name}}</a></h3>
+							<!-- add this to make exercises clickable links -->
+							<!-- <h3><a href="/exercises/\{{_id}}">{{name}}</a></h3> -->
+							<h3>{{name}}</h3>
 							<p>Sets: </p>
 							<input id="sets" type="text" name="sets[]">
 							<p>Repitions:</p>
@@ -54,12 +55,12 @@
 			{{/each}}
 		</section>	
 		<div class="buttons">
-			<div class="history">
+<!-- 			<div class="history">
 					<br><button type="button" class="btn-btn-primary" id="history">Workout History</button>
-				<div class="update">
+ --><!-- 				<div class="update">
 					<br><button type="button" class="btn-btn-primary" id="updateWorkout">Update Workout</button>
 				</div>
-				<div class="delete">
+ -->				<div class="delete">
 					<br><button type="button" class="btn-btn-primary" id="deleteWorkout">Delete Workout</button>
 				</div>
 				<div class="save">

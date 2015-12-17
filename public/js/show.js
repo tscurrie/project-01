@@ -17,8 +17,17 @@ $(document).ready(function() {
 			}
 		});
 	});
-		
 	
+		var path = (window.location.pathname);
+		var pathSplit = path.split('/')[2];	
+	$.ajax({
+		method: 'GET',
+		url: '/workouts/:id/history',
+		data: {id:pathSplit},
+		success: function (data) {
+			cionsole.log(data);
+		}
+	});
 
 	
 	// using update
