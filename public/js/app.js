@@ -70,6 +70,7 @@ $(document).ready(function() {
 
 	$('#createWorkout').on('click', function (e){
 		e.preventDefault();
+		console.log('ahhh');
 		// var formData = $('#workout-form form').serialize();
 		var name = $('#workout-name').val();
 		var description = $('#description').val();
@@ -88,7 +89,7 @@ $(document).ready(function() {
 		var ex13 = $('#ex13').val();
 		var ex14 = $('#ex14').val();
 		var ex15 = $('#ex15').val();
-		var formData = {name: name, description: description};
+		var formData = {workoutName: name, description: description};
 		var exercises = [];
 		$(".newExercises").each(function(element){
 			var x = ($(this).val());
@@ -100,7 +101,7 @@ $(document).ready(function() {
 		console.log('form data', formData);
 		$.ajax({
 			method: 'POST',
-			url: '/api/workouts',
+			url: '/api/workouts/',
 			data: formData,
 			success: function(response){
 					console.log(response);
@@ -120,17 +121,7 @@ $(document).ready(function() {
 			}
 		});
 	});
-	// $('#deleteWorkout').on('click', function (e){
-	// 	alert('why?');
-	// });
-
-
-
-	// $('#confirm-delete').on('click', function (e){
-	// 	var workoutDelete = $('#exerciseDelete').val();	
-	// 	console.log(workoutDelete);
-		
-	// });
+	
 
 	// adds more input fields, look into other solutions
 	$('#addMore').on('click', function (e){
