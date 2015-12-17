@@ -48,13 +48,7 @@ app.get('/api/workouts', function (req, res) {
 	});
 });
 
-// app.get('/api/exercises', function (req, res) {
-// 	res.send('exrcises server side is working');
-// });
 
-// app.get('/api/history', function (req, res){
-// 	res.send('history page is working');
-// });
 
 app.post('/api/workouts', function (req, res){
 	console.log('req', req.body);
@@ -65,7 +59,13 @@ app.post('/api/workouts', function (req, res){
 		});
 });
 
-
+app.delete('/api/workouts', function (req,res) {
+	console.log("req.body.id:",req.body.id);
+	db.Workout.remove(req.body.id, function (err, gone){
+		console.log('bye id', req.body);
+	});
+	// res.send(req.body);
+});
 
 
 app.get('/api/workouts/:id', function (req, res) {
