@@ -1,11 +1,23 @@
 $(document).ready(function() {
 	console.log('app.js loaded!');
 
+	
 
 	// using delete
 	$('#deleteWorkout').on('click', function (e){
-		console.log('delete');
+		var path = (window.location.pathname);
+		var pathSplit = path.split('/')[2];
+		$.ajax({
+			method: 'DELETE',
+			url: '/api/workouts',
+			data: {id:pathSplit},
+			success: function (e) {
+				location.href = 'http://localhost:3000/workouts';
+			}
+		});
 	});
+		
+	
 
 	
 	// using update
@@ -31,7 +43,6 @@ $(document).ready(function() {
 		url: '/api/workouts',
 		success: function (data){
 		data.forEach( function(i){
-		$('.test').prepend(data[0].wokoutName);
 			console.log(i);
 			
 		});
