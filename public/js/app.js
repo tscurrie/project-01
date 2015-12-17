@@ -21,9 +21,6 @@ $(document).ready(function() {
 		location.href=('/workouts/' + id);
 		console.log(id);
 	    
-		// if you want ot have the modal pop up on the workout click
-	    // $('#myModal').data('data-id', id);
-	    // $('#myModal').modal();
 
 		});
 
