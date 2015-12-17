@@ -11,8 +11,9 @@ $(document).ready(function() {
 			method: 'DELETE',
 			url: '/api/workouts',
 			data: {id:pathSplit},
-			success: function (e) {
-				location.href = 'http://localhost:3000/workouts';
+			success: function () {
+				console.log("SUCCESS!!!");
+				window.location = 'http://localhost:3000/workouts';
 			}
 		});
 	});
