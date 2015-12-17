@@ -31,7 +31,7 @@ $(document).ready(function() {
 		url: '/api/workouts',
 		success: function (data){
 		data.forEach( function(i){
-		$('exercise-form').prepend();
+		$('.test').prepend(data[0].wokoutName);
 			console.log(i);
 			
 		});

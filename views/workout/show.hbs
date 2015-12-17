@@ -27,12 +27,14 @@
 		</div>
 		
 		<section id='exercise-form' class="container">
+			{{#each exercises}}		
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">	
 					<form class="form-vertical">
 						<fieldset>	
 						<h2>Record your workout</h2>
 						<div class ="exercise-list">
+							
 							<h4>{{exercise}}</h4>
 							<p>Sets: </p>
 							<input id="sets" type="text" name="sets[]">
@@ -48,6 +50,7 @@
 					</form>
 				</div>
 			</div>
+			{{/each}}
 		</section>	
 		<div class="buttons">
 			<div class="history">
@@ -63,5 +66,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="test"></div>
+
 	</body>
 </html>

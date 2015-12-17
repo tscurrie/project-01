@@ -11,6 +11,7 @@ $(document).ready(function() {
 		success: (function (data){
 				console.log(data);
 				var dataHtml = template({workouts: data});
+				console.log(dataHtml);
 				$('#workout-list').append(dataHtml);
 		})
 
@@ -26,7 +27,7 @@ $(document).ready(function() {
 
 		});
 
-  });
+  
 		
 		// selecotrs for buttons in modals, non-functional att
 		// $('#myModal').on('click','#continue', function (e){
@@ -80,9 +81,9 @@ $(document).ready(function() {
 	// });
 	
 
-	$('.create').on('click', function (e){
+	$('#createWorkout').on('click', function (e){
 		e.preventDefault();
-		var formData = $('#workout-form form').serialize();
+		// var formData = $('#workout-form form').serialize();
 		var name = $('#workout-name').val();
 		var description = $('#description').val();
 		var ex1 = $('#ex1').val();
@@ -100,6 +101,15 @@ $(document).ready(function() {
 		var ex13 = $('#ex13').val();
 		var ex14 = $('#ex14').val();
 		var ex15 = $('#ex15').val();
+		var formData = {name: name, description: description};
+		var exercises = [];
+		$(".newExercises").each(function(element){
+			var x = ($(this).val());
+			if (x.length > 0) {  
+				exercises.push({name: x});
+			}
+		});
+		formData.exercises = exercises;
 		console.log('form data', formData);
 		$.ajax({
 			method: 'POST',
@@ -140,7 +150,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		console.log('add-more is working');
 		$('.hidden-test').toggle();
-	// });
+	 });
 
 
 });

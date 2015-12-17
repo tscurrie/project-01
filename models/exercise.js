@@ -1,14 +1,13 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
+var LogEntry = require('./logEntry.js');
+
+
 var ExerciseSchema = new Schema({
-	// name: String, // name from workoutSchema
-	// date: Date,
-	// sets: Number,
-	// reps: Number,
-	// weight/time: Number,
-	note: String
-});
+	name: String, 
+	logEntries: [LogEntry.schema]
+	});
 
 var Exercise = mongoose.model('Exercise', ExerciseSchema);
 

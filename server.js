@@ -30,32 +30,14 @@ app.get("/", function homepage(req, res){
 });
 
 app.get('/workouts', function workout_index (req, res) {
-	res.sendFile(__dirname + '/views/workout/indexW.hbs');
+	res.render('workout/indexW.hbs');
 });
 
 app.get('/workouts/:id', function workout_show (req, res) {
-	res.render('workout/show', {
-_id: "5670b5efc06cf7615b01dea2",
-workoutName: "arms and back",
-description: "Upper body workout to be performed twice a week",
-__v: 0,
-exercises: [
-{
-date: "2015-12-16T00:53:03.878Z",
-sets: 10,
-reps: 10,
-note: "example 0",
-_id: "5670b5efc06cf7615b01dea4"
-},
-{
-date: "2015-12-16T00:53:03.878Z",
-sets: 10,
-reps: 10,
-note: "example 1",
-_id: "5670b5efc06cf7615b01dea3"
-}
-]
-});
+	db.Workout.findOne({_id: req.params.id}, function (err, workout){
+		res.render('workout/show', workout);
+
+	});
 });
 
 //// JSON ENDPOINTS
@@ -78,8 +60,8 @@ app.post('/api/workouts', function (req, res){
 	console.log('req', req.body);
 	db.Workout.create(req.body, function (err, workouta){
 			// exercises.push(workouta);
-			console.log('workouta',workouta);
-			res.send(workouta);
+			// console.log('workouta',workouta);
+			res.json(workouta);
 		});
 });
 
