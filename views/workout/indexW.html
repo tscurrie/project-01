@@ -7,14 +7,14 @@
 	<title>Let's Get Stronger</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 	
 </head>
 <body>
@@ -100,12 +100,12 @@
 					            {{#each workouts}}
 					              <li >
 					              workout_id: {{_id}} TEMPORARY
-					              <p class="list-group-item workout" data-id="{{_id}}"><strong>Workout: </strong>{{workoutName}}</p>
+					              <p class="list-group-item workout" data-id="{{_id}}"><strong>Workout: </strong><a href="/workouts/{{_id}}">{{workoutName}}</a></p>
 					              <p><strong>Description: </strong>{{description}}</p>
 					              <p><strong>Exercises: </strong>
 					              		<ul>
 						              		{{#each exercises}}
-						              			<li>{{note}}, exercise_id: {{_id}} TEMPORARY</li>
+						              			<li>{{note}} exercise_id: {{_id}} TEMPORARY</li>
 						              		{{/each}}
 					              		</ul>
 					              </li></br>
@@ -121,31 +121,7 @@
 	
 	
 	</section>
-<!-- Button HTML (to Trigger Modal) -->
-<!-- <a href="#myModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Delete Workout</a> -->
- 
-<!-- Modal HTML -->
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">{{workoutName}}</h4>
-            </div>
-            <div class="modal-body">
-                <p>Would you like to perform any of these actions before moving on?</p>
-                <p class="text-warning">
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" id="update" class="btn btn-primary">Update Workout</button>
-		            <button type="button" id="delete" class="btn btn-primary">Delete</button>
-                <button type="button" id="continue" class="btn btn-primary">Continue to Workout</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 </body>
 </html>
