@@ -23,7 +23,9 @@ $(document).ready(function() {
 	
 	// using update
 	$('#updateWorkout').on('click', function (e){
-		console.log('update');
+		var path = (window.location.pathname);
+		var pathSplit = path.split('/')[2];
+		console.log(pathSplit);
 	});
 
 
