@@ -26,20 +26,10 @@ $(document).ready(function() {
 
   
 		
-		// selecotrs for buttons in modals, non-functional att
-		// $('#myModal').on('click','#continue', function (e){
-		// 	alert('wtf');
-		// });
-
-		// $('#update').on('click', function (e){
-		// 	alert('update');
-		// });
-		// $('#delete').on('click', function (e){
-		// 	alert('delete');
-		// });
+		
 		
 
-		// $('')
+		
 
 	// tunely suggestions maybe delete
 
