@@ -100,12 +100,12 @@
 					            \{{#each workouts}}
 					              <li >
 					              <p class="list-group-item workout" data-id="{{_id}}"><strong>Workout: </strong><a href="/workouts/\{{_id}}">\{{workoutName}}</a></p>
-					              workout_id: \{{_id}} TEMPORARY
+					              <strong>workout_id: </strong> \{{_id}} TEMPORARY
 					              <p><strong>Description: </strong>\{{description}}</p>
 					              <p><strong>Exercises: </strong>
 					              		<ul>
 						              		\{{#each exercises}}
-						              			<li>{{note}}, exercise_id: \{{_id}} TEMPORARY</li>
+						              			<li>\{{note}}, exercise_id: \{{_id}} TEMPORARY</li>
 						              		\{{/each}}
 					              		</ul>
 					              </li></br>
