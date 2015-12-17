@@ -128,6 +128,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		console.log('add-more is working');
 		$('.hidden-test').toggle();
+		$('#addMore').toggle();
 	 });
 
 
