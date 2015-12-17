@@ -59,13 +59,18 @@ app.post('/api/workouts', function (req, res){
 		});
 });
 
+// Delete workout
 app.delete('/api/workouts', function (req,res) {
 	console.log("req.body.id:",req.body.id);
-	db.Workout.remove(req.body.id, function (err, gone){
+	db.Workout.remove({_id: req.body.id}, function (err, gone){
+		if (err) {
+			console.log("error");
+		}
 		console.log('bye id', req.body);
+		res.json({status:200,message:"This was successfully deleted."});
 	});
-	// res.send(req.body);
-});
+	});
+
 
 
 app.get('/api/workouts/:id', function (req, res) {
