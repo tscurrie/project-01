@@ -17,17 +17,17 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
-		var path = (window.location.pathname);
-		var pathSplit = path.split('/')[2];	
-	$.ajax({
-		method: 'GET',
-		url: '/workouts/:id/history',
-		data: {id:pathSplit},
-		success: function (data) {
-			cionsole.log(data);
-		}
-	});
+		// to look at workout history
+	// 	var path = (window.location.pathname);
+	// 	var pathSplit = path.split('/')[2];	
+	// $.ajax({
+	// 	method: 'GET',
+	// 	url: '/workouts/:id/history',
+	// 	data: {id:pathSplit},
+	// 	success: function (data) {
+	// 		console.log(data);
+	// 	}
+	// });
 
 	
 	// using update
@@ -45,17 +45,38 @@ $(document).ready(function() {
 
 	$('#saveWorkout').on('click', function (e){
 		e.preventDefault();
-		var formData = $('#exercise-form form').serialize();
-		console.log(formData);
+		var date = $('#date').val();
+		console.log(date);
+		var sets = $('#sets').val();
+		var reps = $('#reps').val();
+		var weightTime = $('#weightTime').val();
+		var note = $('#note').val();
+		console.log(sets);
+		console.log(reps);
+		console.log(weightTime);
+		console.log(note);
+
+
 
 	});
+
+
+
+	// // this is to take you to exercise
+	// $('.newE').on('click', function (e){
+	// 	e.preventDefault();			
+	// 	console.log(id);
+	// 	// location.href = ('/exercises/' + id);
+		
+	// });
+
 
 	$.ajax({
 		method: 'GET',
 		url: '/api/workouts',
 		success: function (data){
 		data.forEach( function(i){
-			console.log(i);
+			// console.log(i);
 			
 		});
 		}

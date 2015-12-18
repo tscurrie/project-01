@@ -9,11 +9,9 @@ var app = express(),
 	hbs = require('hbs');
 
 var db = require('./models');
-// serve static files from public folder
-	// {description: 'Upper body workout to be performed twice a week'},
-	// {exercise: 'pull ups', 'push ups','rows','dips','lat pulls'}];
 
 // var exercises= [];
+
 
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views');
@@ -42,12 +40,14 @@ app.get('/workouts/:id', function workout_show (req, res) {
 
 //// JSON ENDPOINTS
 
+// to look at workouts
 app.get('/api/workouts', function (req, res) {
 	db.Workout.find({}, function(err, workouts){
 		res.json(workouts);
 	});
 });
 
+// request to view history
 app.get('/workouts/:id/history', function (req, res) {
 	db.Workout.find({_id: req.body.id}, function(err, workouts){
 	res.json(workouts);
@@ -55,6 +55,7 @@ app.get('/workouts/:id/history', function (req, res) {
 	});
 });
 
+// request to create workouts
 app.post('/api/workouts', function (req, res){
 	console.log('req', req.body);
 	db.Workout.create(req.body, function (err, workouta){
@@ -88,19 +89,7 @@ app.get('/api/workouts/:id', function (req, res) {
 });
 
 
-	// for exercises "api/workouts/" + w.id + "/exercises" + id
-	
-	// app.delete('/api/workouts', function (req, res){
-	// 	console.log('deleting id: req.params.id');
-	// 	db.Workout.remove({_id: req.params.id}, function (err, success){
-	// 		res.json(success);
-	// 	res.send('hell yeah');
-	// });
-	// });
 
-app.get('/testpage', function(req,res){
-	res.render('test', { title: 'Awesome Post', text: 'Lorem ipsum dolor'});
-});
 
 
 
