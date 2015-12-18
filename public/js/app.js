@@ -23,78 +23,24 @@ $(document).ready(function() {
 	    
 
 		});
-
-  
-		
-		
-		
-
-		
-
-	// tunely suggestions maybe delete
-
-	// 	}
-	// });
-	// $.ajax({
-	// 	method: 'GET',
-	// 	url: '/api/workouts/:workout_id/exercises/:id',
-	// 	success: function (data) {
-	// 		console.log(data);
-	// 	}
-	// });
-	// $.ajax({
-	// 	method: 'GET',
-	// 	url: '/api/workouts/:workout_id/exercise',
-	// 	success: function (data) {
-	// 		console.log(data);
-	// 	}
-	// });
-
-
-	// $.ajax({
-	// 	method: 'GET',
-	// 	url: ('/api/exercises'),
-	// 	success: (function (history){
-	// 		console.log('exercises is working');
-	// 	})
-	// });
-
-	// $.ajax({
-	// 	method: 'GET',
-	// 	url: ('/api/history'),
-	// 	success: (function (history){
-	// 		console.log('history is working');
-	// 	})
-	// });
 	
-
+	// this is to create a new workout
 	$('#createWorkout').on('click', function (e){
 		e.preventDefault();
-		console.log('ahhh');
 		// var formData = $('#workout-form form').serialize();
 		var name = $('#workout-name').val();
 		var description = $('#description').val();
-		var ex1 = $('#ex1').val();
-		var ex2 = $('#ex2').val();
-		var ex3 = $('#ex3').val();
-		var ex4 = $('#ex4').val();
-		var ex5 = $('#ex5').val();
-		var ex6 = $('#ex6').val();
-		var ex7 = $('#ex7').val();
-		var ex8 = $('#ex8').val();
-		var ex9 = $('#ex9').val();
-		var ex10 = $('#ex10').val();
-		var ex11 = $('#ex11').val();
-		var ex12 = $('#ex12').val();
-		var ex13 = $('#ex13').val();
-		var ex14 = $('#ex14').val();
-		var ex15 = $('#ex15').val();
+
 		var formData = {workoutName: name, description: description};
 		var exercises = [];
 		$(".newExercises").each(function(element){
-			var x = ($(this).val());
-			if (x.length > 0) {  
-				exercises.push({name: x});
+			var exerciseName = $(this).children(".exerciseName").val();
+			var sets = $(this).children(".sets").val();
+			var reps = $(this).children(".reps").val();
+			if ($(this).length > 0) {  
+				exercises.push({name: exerciseName, sets:sets, reps:reps});
+				console.log(exercises);
+				console.log(exerciseName);
 			}
 		});
 		formData.exercises = exercises;
@@ -124,11 +70,11 @@ $(document).ready(function() {
 	
 
 	// adds more input fields, look into other solutions
-	$('#addMore').on('click', function (e){
+	$('#createNew').on('click', function (e){
 		e.preventDefault();
 		console.log('add-more is working');
 		$('.hidden-test').toggle();
-		$('#addMore').toggle();
+		$('#createNew').toggle();
 	 });
 
 

@@ -2,6 +2,31 @@ body {
 	padding: 20px;
 }
 
+.jumbotron {
+	background: url(http://i.imgur.com/BXZ9hgF.jpg);
+	background-size: cover;
+	min-height: 600px;
+	color: white;
+}
+.heading {
+	margin-left: 120px;
+}
+.heading p {
+	margin-left: 87px;
+	font-size: 22px;
+}
+
+.btn-btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+
 .hidden-test {
 	display: none;
+}
+
+.getWorkouts h2{
+	text-align: center;
+	font-size: 90px;
+	
 }
