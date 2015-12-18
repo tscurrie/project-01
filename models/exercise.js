@@ -6,7 +6,9 @@ var LogEntry = require('./logEntry.js');
 
 var ExerciseSchema = new Schema({
 	name: String, 
-	logEntries: [LogEntry.schema]
+	sets: Number,
+	reps: Number,
+
 	});
 
 var Exercise = mongoose.model('Exercise', ExerciseSchema);

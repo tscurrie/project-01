@@ -17,27 +17,11 @@ $(document).ready(function() {
 			}
 		});
 	});
-		// to look at workout history
-	// 	var path = (window.location.pathname);
-	// 	var pathSplit = path.split('/')[2];	
-	// $.ajax({
-	// 	method: 'GET',
-	// 	url: '/workouts/:id/history',
-	// 	data: {id:pathSplit},
-	// 	success: function (data) {
-	// 		console.log(data);
-	// 	}
-	// });
-
 	
-	// using update
 	
 
 
-	// using history
-	$('#history').on('click', function (e){
-		console.log('history');
-	});
+	
 
 	$('#saveWorkout').on('click', function (e){
 		e.preventDefault();
