@@ -31,11 +31,7 @@ $(document).ready(function() {
 
 	
 	// using update
-	$('#updateWorkout').on('click', function (e){
-		var path = (window.location.pathname);
-		var pathSplit = path.split('/')[2];
-		console.log(pathSplit);
-	});
+	
 
 
 	// using history
@@ -45,30 +41,49 @@ $(document).ready(function() {
 
 	$('#saveWorkout').on('click', function (e){
 		e.preventDefault();
-		var date = $('#date').val();
-		console.log(date);
-		var sets = $('#sets').val();
-		var reps = $('#reps').val();
-		var weightTime = $('#weightTime').val();
-		var note = $('#note').val();
-		console.log(sets);
-		console.log(reps);
-		console.log(weightTime);
-		console.log(note);
+		var date = $('form').eq(0).serialize();
+  		$(".form-vertical").each(function () {
+    	var id = $(this).data("id");
+    	var otherInfo = $(this).serialize();
 
+   });
+			
+
+});
+
+	$('.edit').on('click', function (e){
+		var path = (window.location.pathname);
+		var pathSplit = path.split('/')[2];
+		console.log(pathSplit);
+		var currentName = $('#current-name').html('<input class="edit-current-name"></input>');
+		var currentDescription = $('#current-description').html('<input class="edit-current-description"></input>');
+		console.log(currentName);
+		console.log(currentDescription);
+
+
+		$('.save').on('click', function (e) {
+			e.preventDefault();
+			var newName = $('.edit-current-name').val();
+			var newDescription = $('.edit-current-description').val();
+			console.log(newName);
+			console.log(newDescription);
+
+			$.ajax({
+				method: 'PUT',
+				url: '/api/workouts',
+			    data: { name : newName, description: newDescription},
+			    success: function () {
+			    	console.log('edit worked');
+			    }
+
+			});
+		
+		});
 
 
 	});
 
-
-
-	// // this is to take you to exercise
-	// $('.newE').on('click', function (e){
-	// 	e.preventDefault();			
-	// 	console.log(id);
-	// 	// location.href = ('/exercises/' + id);
-		
-	// });
+	
 
 
 	$.ajax({

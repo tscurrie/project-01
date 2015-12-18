@@ -47,13 +47,7 @@ app.get('/api/workouts', function (req, res) {
 	});
 });
 
-// request to view history
-app.get('/workouts/:id/history', function (req, res) {
-	db.Workout.find({_id: req.body.id}, function(err, workouts){
-	res.json(workouts);
 
-	});
-});
 
 // request to create workouts
 app.post('/api/workouts', function (req, res){
@@ -64,6 +58,8 @@ app.post('/api/workouts', function (req, res){
 			res.json(workouta);
 		});
 });
+
+
 
 // Delete workout
 app.delete('/api/workouts', function (req,res) {
@@ -77,6 +73,12 @@ app.delete('/api/workouts', function (req,res) {
 	});
 	});
 
+app.put('/api/workouts', function (req, res) {
+	console.log('editing workout id=', req.params.id);
+	db.Workout.findByIdAndUpdate({_id: req.params.id}, function (err, success){
+		res.json(success);
+	});
+});
 
 
 app.get('/api/workouts/:id', function (req, res) {
@@ -87,10 +89,6 @@ app.get('/api/workouts/:id', function (req, res) {
 		res.json(success);
 	});
 });
-
-
-
-
 
 
 

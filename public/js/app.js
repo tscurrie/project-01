@@ -34,9 +34,13 @@ $(document).ready(function() {
 		var formData = {workoutName: name, description: description};
 		var exercises = [];
 		$(".newExercises").each(function(element){
-			var x = ($(this).val());
-			if (x.length > 0) {  
-				exercises.push({name: x});
+			var exerciseName = $(this).children(".exerciseName").val();
+			var sets = $(this).children(".sets").val();
+			var reps = $(this).children(".reps").val();
+			if ($(this).length > 0) {  
+				exercises.push({name: exerciseName, sets:sets, reps:reps});
+				console.log(exercises);
+				console.log(exerciseName);
 			}
 		});
 		formData.exercises = exercises;
@@ -66,11 +70,11 @@ $(document).ready(function() {
 	
 
 	// adds more input fields, look into other solutions
-	$('#addMore').on('click', function (e){
+	$('#createNew').on('click', function (e){
 		e.preventDefault();
 		console.log('add-more is working');
 		$('.hidden-test').toggle();
-		$('#addMore').toggle();
+		$('#createNew').toggle();
 	 });
 
 

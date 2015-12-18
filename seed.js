@@ -1,7 +1,7 @@
 var db = require("./models");
 
 var exercises1 = [{name: 'pull ups',
-					logEntries: [] 
+					sets: 3, reps: 3, 
 
 }, {name: 'push ups', logEntries: []}, 
 
